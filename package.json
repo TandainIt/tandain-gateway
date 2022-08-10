@@ -1,0 +1,17 @@
+{
+  "name": "tandain-gateway",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Peitra Erdi",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "@graphql-mesh/cli": "^0.75.7",
+    "@graphql-mesh/openapi": "^0.30.0",
+    "graphql": "^16.5.0"
+  },
+  "devDependencies": {}
+}
