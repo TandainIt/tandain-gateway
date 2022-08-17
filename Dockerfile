@@ -22,7 +22,9 @@ FROM base as development
 
 # Bundle app source
 COPY . .
-CMD ["yarn", "run", "dev"]
+RUN bash -c "./wait-for-all-service.sh
+RUN yanr run build
+CMD ["yarn", "run", "start"]
 
 ## LOCAL
 
