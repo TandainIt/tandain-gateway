@@ -1,0 +1,7 @@
+node_modules
+.mesh
+
+.git
+
+.env
+.env.local

@@ -2,15 +2,15 @@ sources:
   - name: UserAPI
     handler:
       openapi:
-        baseUrl: http://localhost:3001/
-        source: http://localhost:3001/api-docs.json
+        baseUrl: "${USER_API_HOST}"
+        source: "${USER_API_HOST}/api-docs.json"
         operationHeaders:
           Authorization: "{context.headers.authorization}"
   - name: ArticleAPI
     handler:
       openapi:
-        baseUrl: http://localhost:3002/
-        source: http://localhost:3002/api-docs.json
+        baseUrl: "${ARTICLE_API_HOST}"
+        source: "${ARTICLE_API_HOST}/api-docs.json"
         operationHeaders:
           Authorization: "{context.headers.authorization}"
 
