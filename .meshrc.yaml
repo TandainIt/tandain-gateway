@@ -6,6 +6,26 @@ sources:
         source: "${USER_API_HOST}/api-docs.json"
         operationHeaders:
           Authorization: "{context.headers.authorization}"
+    transforms:
+      - rename:
+          mode: bare
+          renames:  
+            - from:
+                type: Mutation
+                field: postApiV1AuthLogin
+                argument: apiV1AuthLoginInput
+              to:
+                type: Mutation
+                field: login
+                argument: body
+            - from:
+                type: Mutation
+                field: postApiV1AuthRefresh
+                argument: apiV1AuthRefreshInput
+              to:
+                type: Mutation
+                field: refreshToken
+                argument: body
   - name: ArticleAPI
     handler:
       openapi:
@@ -13,5 +33,34 @@ sources:
         source: "${ARTICLE_API_HOST}/api-docs.json"
         operationHeaders:
           Authorization: "{context.headers.authorization}"
+    transforms:
+      - rename:
+          mode: bare
+          renames:
+            - from:
+                type: Query
+                field: aRTICLE
+              to: 
+                type: Query
+                field: article  
+            - from:
+                type: Query
+                field: apiV1Article
+              to: 
+                type: Query
+                field: articles    
+            - from:
+                type: Mutation
+                field: postApiV1Article
+                argument: apiV1Article2Input
+              to:
+                type: Mutation
+                field: addArticle
+                argument: body
+
+
+
+serve:
+  hostname: "${HOST}"
 
   
